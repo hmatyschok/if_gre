@@ -1050,7 +1050,7 @@ bridge_delete_member(struct bridge_softc *sc, struct bridge_iflist *bif,
 			break;
 
 		case IFT_GIF:
-		case IFT_GRE:
+		case IFT_TUNNEL:
 			break;
 
 		default:
@@ -1113,7 +1113,7 @@ bridge_ioctl_add(struct bridge_softc *sc, void *arg)
 	case IFT_ETHER:
 	case IFT_L2VLAN:
 	case IFT_GIF:
-	case IFT_GRE:
+	case IFT_TUNNEL:
 		/* permitted interface types */
 		break;
 	default:
@@ -1640,7 +1640,7 @@ bridge_ioctl_addspan(struct bridge_softc *sc, void *arg)
 	switch (ifs->if_type) {
 		case IFT_ETHER:
 		case IFT_GIF:
-		case IFT_GRE:
+		case IFT_TUNNEL:
 		case IFT_L2VLAN:
 			break;
 		default:
@@ -2049,7 +2049,7 @@ bridge_output(struct ifnet *ifp, struct mbuf *m, struct sockaddr *sa,
 
 			if (dst_if->if_type == IFT_GIF)
 				continue;
-			if (dst_if->if_type == IFT_GRE)
+			if (dst_if->if_type == IFT_TUNNEL)
 				continue;	
 			if ((dst_if->if_drv_flags & IFF_DRV_RUNNING) == 0)
 				continue;
@@ -2417,7 +2417,7 @@ bridge_input(struct ifnet *ifp, struct mbuf *m)
 #define GRAB_OUR_PACKETS(iface) \
 	if ((iface)->if_type == IFT_GIF) \
 		continue; \
-	if ((iface)->if_type == IFT_GRE) \
+	if ((iface)->if_type == IFT_TUNNEL) \
 		continue; \	
 	/* It is destined for us. */ \
 	if (memcmp(IF_LLADDR((iface)), eh->ether_dhost,  ETHER_ADDR_LEN) == 0 \
