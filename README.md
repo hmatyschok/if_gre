@@ -1,7 +1,7 @@
+<pre><code> 
 Transparent Ethernet Bridging in conjunction with if_gre(4) [v 1.49]  
 --------------------------------------------------------------------
 
-<pre><code> 
  The if_gre(4) [v 1.49] interface implements GRE for the FreeBSD
  operating system was extended for Transparent Ethernet Bridging
  in conjunction with a modefied version of if_bridge(4).
