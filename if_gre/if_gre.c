@@ -980,7 +980,7 @@ gre_transmit(struct ifnet *ifp, struct mbuf *m)
 		goto drop;
 	}
 
-	if (ifp->if_bridge)
+	if (ifp->if_bridge)		
 		iaf = AF_LINK;
 	else
 		iaf = m->m_pkthdr.csum_data;
