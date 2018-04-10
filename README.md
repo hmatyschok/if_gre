@@ -27,30 +27,17 @@ Transparent Ethernet Bridging in conjunction with if_gre(4) [v 1.49]
  demultipexed by ether_demux(9) locally.
  
  But this "feature" is written from scratch and still untested.
-</code></pre>
-     
+   
 Legal Notice: 
 -------------
- 
-<pre><code>
+
   (a) FreeBSD is a trademark of the FreeBSD Foundation.
-</code></pre>
 
 Additional information about contacting
 ---------------------------------------
       
 If someone wants to contact me by electronic mail, use encryption!
 
-<pre><code>
-Otherwise, any connection attempt will be discarded. 
-</code></pre>
-
-This is a necessary security measure, because I would like to know 
-who is contacting me, because of this planet is full of individuals 
-whose are operating on one's own merits and this imply that this 
-planet is not a so called "Ponyhof", unfortunately. :)
-
-<pre><code>
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v2
 
@@ -82,4 +69,10 @@ u5E2GRq1FgrjmjTS8r+/zZfV31iFkIdc5gC9ipwBsA7H6Bx8lPP5M0l1MXS/wAWU
 8GZ4NRztiBU=
 =lsmx
 -----END PGP PUBLIC KEY BLOCK-----
-</code></pre>
+
+Otherwise, any connection attempt will be discarded. 
+
+This is a necessary security measure, because I would like to know 
+who is contacting me, because of this planet is full of individuals 
+whose are operating on one's own merits and this imply that this 
+planet is not a so called "Ponyhof", unfortunately. :)
