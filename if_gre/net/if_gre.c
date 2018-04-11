@@ -922,6 +922,14 @@ gre_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst,
 		error = ENETDOWN;
 		goto drop;
 	}
+/*
+ * Datagrams from layer above are deleted, if 
+ * Transparent Ethernet Bridging is enabled. 
+ */
+	if (ifp->if_bridge) {
+		error = ECONNABORTED;
+		goto drop;
+	}
 
 	error = gre_check_nesting(ifp, m);
 	if (error != 0)
