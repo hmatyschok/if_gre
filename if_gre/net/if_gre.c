@@ -927,7 +927,7 @@ gre_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst,
  * Transparent Ethernet Bridging is enabled. 
  */
 	if (ifp->if_bridge) {
-		error = ECONNABORTED;
+		error = EBUSY;
 		goto drop;
 	}
 
