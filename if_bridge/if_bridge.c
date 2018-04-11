@@ -2418,7 +2418,7 @@ bridge_input(struct ifnet *ifp, struct mbuf *m)
 	if ((iface)->if_type == IFT_GIF) \
 		continue; \
 	if ((iface)->if_type == IFT_TUNNEL) \
-		continue; \	
+		continue; \
 	/* It is destined for us. */ \
 	if (memcmp(IF_LLADDR((iface)), eh->ether_dhost,  ETHER_ADDR_LEN) == 0 \
 	    OR_CARP_CHECK_WE_ARE_DST((iface))				\
