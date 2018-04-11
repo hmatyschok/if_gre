@@ -819,6 +819,9 @@ gre_input(struct mbuf **mp, int *offp, int proto)
 		af = AF_INET6;
 		break;
 	case ETHERTYPE_TRANSETHER:
+/*
+ * Indicates encapsulated Ethernet frames.
+ */
 		af = AF_LINK;
 		break;
 	default:
@@ -838,7 +841,7 @@ gre_input(struct mbuf **mp, int *offp, int proto)
 		m_freem(m);
 	else if (af == AF_LINK) {
 /*
- * Code-section from gif_input(9) reused.
+ * Code-section from gif_input(9) reused for demultiplexing frames.
  */
 		if (ifp->if_bridge) {
 			oldifp = ifp;
@@ -1030,6 +1033,9 @@ gre_transmit(struct ifnet *ifp, struct mbuf *m)
 		break;
 #endif
 	case AF_LINK:
+/*
+ * Indicate encapsulated Ethernet frame.
+ */
 		gh->gre_proto = htons(ETHERTYPE_TRANSETHER);
 		break;
 	default:

@@ -24,7 +24,7 @@ Transparent Ethernet Bridging in conjunction with if_gre(4) [v 1.49]
  encapsulated by gre_transmit(9) where handoff into ip{4,6}(4)
  domain takes place. Any by gre_input(9) rx'd frame will be
  either forwarded by if_bridge(4) throught bridge_input(9) or 
- demultipexed by ether_demux(9) locally.
+ demultiplexed by ether_demux(9) locally.
    
 Legal Notice: 
 -------------

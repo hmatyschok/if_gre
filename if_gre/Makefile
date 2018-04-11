@@ -1,6 +1,6 @@
 
 SYSDIR?=${SRCTOP}/sys
-.PATH: ${.CURDIR} ${SYSDIR}/netinet ${SYSDIR}/netinet6
+.PATH: ${.CURDIR}/net ${.CURDIR}/netinet ${SYSDIR}/netinet6
 .include "${SYSDIR}/conf/kern.opts.mk"
 
 KMOD=	if_gre
