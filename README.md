@@ -25,8 +25,6 @@ Transparent Ethernet Bridging in conjunction with if_gre(4) [v 1.49]
  domain takes place. Any by gre_input(9) rx'd frame will be
  either forwarded by if_bridge(4) throught bridge_input(9) or 
  demultipexed by ether_demux(9) locally.
- 
- But this "feature" is written from scratch and still untested.
    
 Legal Notice: 
 -------------
