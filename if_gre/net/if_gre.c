@@ -86,7 +86,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 #include <sys/cdefs.h>
-__FBSDID("$FreeBSD: releng/11.1/sys/net/if_gre.c 317403 2017-04-25 11:19:22Z ae $");
 
 #include "opt_inet.h"
 #include "opt_inet6.h"
@@ -919,14 +918,6 @@ gre_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst,
 	if ((ifp->if_flags & IFF_MONITOR) != 0 ||
 	    (ifp->if_flags & IFF_UP) == 0) {
 		error = ENETDOWN;
-		goto drop;
-	}
-/*
- * Datagrams from layer above are deleted, if 
- * Transparent Ethernet Bridging is enabled. 
- */
-	if (ifp->if_bridge != NULL) {
-		error = EBUSY;
 		goto drop;
 	}
 	error = gre_check_nesting(ifp, m);
