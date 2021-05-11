@@ -63,7 +63,6 @@
  */
 /*
  * Copyright (c) 2018 Henning Matyschok
- * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -926,11 +925,10 @@ gre_output(struct ifnet *ifp, struct mbuf *m, const struct sockaddr *dst,
  * Datagrams from layer above are deleted, if 
  * Transparent Ethernet Bridging is enabled. 
  */
-	if (ifp->if_bridge) {
+	if (ifp->if_bridge != NULL) {
 		error = EBUSY;
 		goto drop;
 	}
-
 	error = gre_check_nesting(ifp, m);
 	if (error != 0)
 		goto drop;
